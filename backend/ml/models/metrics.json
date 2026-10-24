@@ -1,0 +1,64 @@
+{
+  "dataset": "urlset.csv",
+  "rows_used": 47162,
+  "feature_count": 31,
+  "features": [
+    "host_length",
+    "host_num_dots",
+    "host_has_ip",
+    "num_subdomains",
+    "suspicious_words",
+    "host_special_char_count",
+    "host_digits_count",
+    "host_entropy",
+    "host_num_hyphens",
+    "host_num_labels",
+    "max_label_length",
+    "avg_label_length",
+    "min_label_length",
+    "digit_ratio",
+    "letter_ratio",
+    "hyphen_ratio",
+    "longest_digit_run",
+    "contains_punycode",
+    "contains_double_hyphen",
+    "starts_with_www",
+    "hyphenated_label_count",
+    "numeric_label_count",
+    "tld_length",
+    "suspicious_tld",
+    "unique_char_ratio",
+    "repeated_char_pairs",
+    "letter_digit_transitions",
+    "brand_term_count",
+    "brand_in_subdomain_count",
+    "max_label_digit_ratio",
+    "labels_with_long_digit_run"
+  ],
+  "label_mapping_assumption": "0=legitimate, 1=phishing; verify against dataset docs",
+  "split_sizes": {
+    "train": 37729,
+    "dev": 4716,
+    "test": 4717
+  },
+  "split_method": "stratified random split of unique hostnames; near-duplicate related domains may cross splits",
+  "best_epoch": 14,
+  "best_dev_macro_f1_at_0_5": 0.7953,
+  "dev_selected_threshold": 0.5000000000000002,
+  "dev_accuracy_at_selected_threshold": 0.7954,
+  "test_accuracy": 0.7891,
+  "test_precision_phishing": 0.8349,
+  "test_recall_phishing": 0.7504,
+  "test_f1_phishing": 0.7904,
+  "test_macro_f1": 0.7891,
+  "confusion_matrix_labels_0_1": [
+    [
+      1846,
+      371
+    ],
+    [
+      624,
+      1876
+    ]
+  ]
+}

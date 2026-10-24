@@ -1,0 +1,59 @@
+{
+  "model_type": "PhishGuard-full-url-char-tfidf-logistic-v1",
+  "dataset": "urlset.csv",
+  "rows_used": 94142,
+  "unique_hosts": 47162,
+  "features": "character TF-IDF n-grams (3\u20135) over normalized full URL text",
+  "vectorizer_max_features": 120000,
+  "classifier": "sklearn LogisticRegression(C=4.0, solver='liblinear')",
+  "split_method": "Stratified host-group split; same hostname does not cross splits",
+  "split_sizes_rows": {
+    "train": 76161,
+    "dev": 8661,
+    "test": 9320
+  },
+  "test_accuracy": 0.977361,
+  "test_precision_phishing": 0.988654,
+  "test_recall_phishing": 0.971928,
+  "test_f1_phishing": 0.980219,
+  "test_macro_f1": 0.976878,
+  "confusion_matrix_labels_0_1": [
+    [
+      3881,
+      60
+    ],
+    [
+      151,
+      5228
+    ]
+  ],
+  "classification_report": {
+    "Legitimate": {
+      "precision": 0.9625496031746031,
+      "recall": 0.9847754377061659,
+      "f1-score": 0.9735356829298883,
+      "support": 3941.0
+    },
+    "Phishing": {
+      "precision": 0.9886535552193646,
+      "recall": 0.9719278676333891,
+      "f1-score": 0.9802193681447455,
+      "support": 5379.0
+    },
+    "accuracy": 0.9773605150214593,
+    "macro avg": {
+      "precision": 0.9756015791969839,
+      "recall": 0.9783516526697775,
+      "f1-score": 0.976877525537317,
+      "support": 9320.0
+    },
+    "weighted avg": {
+      "precision": 0.9776153926648147,
+      "recall": 0.9773605150214593,
+      "f1-score": 0.977393144600566,
+      "support": 9320.0
+    }
+  },
+  "label_mapping_note": "Confirm in the dataset documentation that 0=legitimate and 1=phishing.",
+  "caution": "Single-dataset evaluation; not a real-world guarantee. Use an external or future-dated dataset for a stronger final claim."
+}
